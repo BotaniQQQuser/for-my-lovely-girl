@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+    :root {
+      --primary-button-bg-color: #6798f2;
+      --primary-button-color: #edf5ff;
+      --primary-color: #122971;
+      --primary-bg-color: #f0f5fc;
+    }
+
+    body {
+      background-position: center;
+      background-attachment: fixed;
+      background-repeat: repeat-x;
+      background-size: auto 100%;
+      background-image: url('./main_background.png');
+
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      overflow: hidden;
+
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-size: 16px;
+      line-height: 24px;
+      font-weight: 600;
+      color: var(--primary-color);
+
+      box-sizing: border-box;
+
+      display: flex;
+      flex-direction: column;
+    }
+
+    .journey {
+      background-image: none;
+      background-color: var(--primary-bg-color);
+    }
+
+    h1, h2, h3, p {
+      margin: 0;
+    }
+
+    main {
+      flex-grow: 1;
+      text-align: left;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    footer {
+      display: none;
+    }
+
+    body:has(section.step.step_active) footer {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    @media screen and (width <= 480px) {
+      main {
+        margin: 0 40px;
+      }
+
+      footer {
+        margin: 0 40px 48px;
+      }
+    }
+
+    @media screen and (width > 480px) {
+      main {
+        max-width: 400px;
+        margin: 0 auto;
+      }
+
+      footer {
+        width: 400px;
+        margin: 0 auto 48px;
+      }
+    }
+
+    .preface {
+      display: none;
+      margin-top: -240px;
+      gap: 24px;
+    }
+
+    .content {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .primary-button,
+    .secondary-button {
+      margin: 0;
+      padding: 16px 24px;
+      border: none;
+      font-size: inherit;
+      border-radius: 25px;
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+    }
+
+    .primary-button {
+      background-color: var(--primary-button-bg-color);
+      color: var(--primary-button-color);
+    }
+
+    .secondary-button {
+      color: var(--primary-button-bg-color);
+      background-color: #FFF;
+      border: 1px solid #22222220;
+    }
+
+    .primary-button:hover,
+    .secondary-button:hover {
+      cursor: pointer;
+    }
+
+    .step {
+      display: none;
+      gap: 16px;
+    }
+
+    .step_active {
+      display: flex;
+      flex-direction: column;
+      animation: appearance 1s ease-out;
+    }
+
+    .header {
+      display: flex;
+      gap: 16px;
+      align-items: center;
+    }
+
+    .counter {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background-color: var(--primary-button-bg-color);
+      color: var(--primary-button-color);
+    }
+
+    .image {
+      aspect-ratio: 1;
+      border-radius: 48px;
+    }
+
+    @keyframes appearance {
+      0% {
+        opacity: 0;
+      }
+
+      100% {
+        opacity: 1;
+      }
+    }
+  </style>
+  <script defer src="./script.mjs"></script>
+</head>
+<body>
+  <main>
+    <section class="preface step_active" data-type="step">
+      <h3>Иногда самые важные путешествия начинаются с одного шага</h3>
+      <p>Я хочу пройти его вместе с тобой</p>
+      <button type="button" class="primary-button" id="start-journey">
+        Начать путешествие
+      </button>
+    </section>
+    
+    <section class="step" data-type="step">
+      <header class="header">
+        <span class="counter">1</span>
+        <span>Начало</span>
+      </header>
+      <img src="./mountains.png" class="image" />
+      <p>Сегодня я хочу показать тебе кое-что необычное...</p>
+      <p>Это путешествие о нас!</p>
+    </section>
+
+    <section class="step" data-type="step">
+      <header class="header">
+        <span class="counter">2</span>
+        <span>Ты - особенная</span>
+      </header>
+      <img src="./lovely_girl.png" class="image" />
+      <p>
+        Иногда даже один человек способен наполнить жизнь теплом и светом
+      </p>
+      <p>Кристиночка, ты - именно такой человек!</p>
+    </section>
+
+    <section class="step" data-type="step">
+      <header class="header">
+        <span class="counter">3</span>
+        <span>Ты - моё вдохновение</span>
+      </header>
+      <img src="./inspiration.png" class="image" />
+      <p>
+        Милая, ты делаешь меня лучше, помогаешь мечтать и верить в важное!
+      </p>
+    </section>
+
+    <section class="step" data-type="step">
+      <header class="header">
+        <span class="counter">4</span>
+        <span>Вместе лучше</span>
+      </header>
+      <img src="./together.png" class="image" />
+      <p>
+        Рядом с тобой обычные дни становятся особенными. Спасибо, что ты есть у меня!
+      </p>
+    </section>
+
+    <section class="step" data-type="step">
+      <header class="header">
+        <span class="counter">5</span>
+        <span>Мечты и планы</span>
+      </header>
+      <img src="./dreams.png" class="image" />
+      <p>
+        У нас впереди так много приятных моментов, совместных поездок и путешествий, а также маленьких радостей!
+      </p>
+    </section>
+
+    <section class="step" data-type="step">
+      <header class="header">
+        <span class="counter">6</span>
+        <span>Совместный маршрут</span>
+      </header>
+      <img src="./love.png" class="image" />
+      <p>
+        Солнышко моё, я люблю тебя и хочу пройти с тобой еще очень много шагов!
+      </p>
+    </section>
+  </main>
+  <footer>
+    <button type="button" class="secondary-button" id="previous-step">
+      <img src="./arrow-left.svg" />
+    </button>
+    <button type="button" class="primary-button" id="next-step">
+      Далее
+      <img src="./arrow-right.svg" />
+    </button>
+  </footer>
+</body>
+</html>
