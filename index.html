@@ -1,9 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="icon" href="./favicon.png">
+  <title>Для тебя</title>
 
   <style>
     :root {
@@ -18,11 +20,11 @@
       background-attachment: fixed;
       background-repeat: repeat-x;
       background-size: auto 100%;
-      background-image: url('./main_background.png');
+      background-image: url('./main_background.webp');
 
       margin: 0;
       padding: 0;
-      height: 100vh;
+      height: 100dvh;
       overflow: hidden;
 
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -119,6 +121,10 @@
       border: 1px solid #22222220;
     }
 
+    .hidden-button {
+      display: none;
+    }
+
     .primary-button:hover,
     .secondary-button:hover {
       cursor: pointer;
@@ -184,7 +190,7 @@
         <span class="counter">1</span>
         <span>Начало</span>
       </header>
-      <img src="./mountains.png" class="image" />
+      <img src="./mountains.webp" class="image" alt="Горы" />
       <p>Сегодня я хочу показать тебе кое-что необычное...</p>
       <p>Это путешествие о нас!</p>
     </section>
@@ -194,9 +200,9 @@
         <span class="counter">2</span>
         <span>Ты - особенная</span>
       </header>
-      <img src="./lovely_girl.png" class="image" />
+      <img src="./lovely_girl.webp" class="image" alt="Кристиночка" />
       <p>
-        Иногда даже один человек способен наполнить жизнь теплом и светом
+        Иногда даже один человек способен наполнить жизнь теплом и светом.
       </p>
       <p>Кристиночка, ты - именно такой человек!</p>
     </section>
@@ -206,9 +212,9 @@
         <span class="counter">3</span>
         <span>Ты - моё вдохновение</span>
       </header>
-      <img src="./inspiration.png" class="image" />
+      <img src="./inspiration.webp" class="image" alt="Вдохновение" />
       <p>
-        Милая, ты делаешь меня лучше, помогаешь мечтать и верить в важное!
+        Милая, ты делаешь меня лучше, помогаешь мечтать и верить в важное!
       </p>
     </section>
 
@@ -217,9 +223,9 @@
         <span class="counter">4</span>
         <span>Вместе лучше</span>
       </header>
-      <img src="./together.png" class="image" />
+      <img src="./together.webp" class="image" alt="Мы вместе" />
       <p>
-        Рядом с тобой обычные дни становятся особенными. Спасибо, что ты есть у меня!
+        Рядом с тобой обычные дни становятся особенными. Спасибо, что ты есть у меня!
       </p>
     </section>
 
@@ -228,9 +234,9 @@
         <span class="counter">5</span>
         <span>Мечты и планы</span>
       </header>
-      <img src="./dreams.png" class="image" />
+      <img src="./dreams.webp" class="image" alt="Мечты" />
       <p>
-        У нас впереди так много приятных моментов, совместных поездок и путешествий, а также маленьких радостей!
+        У нас впереди так много приятных моментов, совместных поездок и путешествий, а также маленьких радостей!
       </p>
     </section>
 
@@ -239,19 +245,22 @@
         <span class="counter">6</span>
         <span>Совместный маршрут</span>
       </header>
-      <img src="./love.png" class="image" />
+      <img src="./love.webp" class="image" alt="Любовь" />
       <p>
-        Солнышко моё, я люблю тебя и хочу пройти с тобой еще очень много шагов!
+        Солнышко моё, я люблю тебя и хочу пройти с тобой еще очень много шагов!
       </p>
     </section>
   </main>
   <footer>
     <button type="button" class="secondary-button" id="previous-step">
-      <img src="./arrow-left.svg" />
+      <img src="./arrow-left.svg" aria-hidden="true"  />
     </button>
     <button type="button" class="primary-button" id="next-step">
       Далее
-      <img src="./arrow-right.svg" />
+      <img src="./arrow-right.svg" aria-hidden="true" />
+    </button>
+    <button type="button" class="primary-button hidden-button" id="to-the-start">
+      Вернуться к началу
     </button>
   </footer>
 </body>
